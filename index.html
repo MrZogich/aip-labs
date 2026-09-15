@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>JavaScript — язык веба</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Всё о JavaScript: возможности, примеры, экосистема" />
+    <meta name="keywords" content="JavaScript, JS, веб-разработка, программирование" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section class="intro">
+            <header>
+                <h1>JavaScript</h1>
+                <p>Язык программирования, который оживляет веб-страницы. От простых скриптов до полноценных приложений — <strong>JS</strong> везде.</p>
+                <ul class="actions">
+                    <li><a href="#first" class="arrow scrolly"><span class="label">Далее</span></a></li>
+                </ul>
+            </header>
+            <div class="content">
+                <span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="JavaScript" /></span>
+            </div>
+        </section>
+
+        <!-- Section 1: Что такое JavaScript -->
+        <section id="first">
+            <header>
+                <h2>Что такое JavaScript?</h2>
+            </header>
+            <div class="content">
+                <p><strong>JavaScript</strong> — это высокоуровневый интерпретируемый язык программирования, стандартизированный по спецификации <strong>ECMAScript</strong>. Изначально созданный Бренданом Айком в 1995 году для браузера Netscape, сегодня он работает везде: в браузерах, на серверах (Node.js), в мобильных приложениях, десктопе и даже в микроконтроллерах.</p>
+                <span class="image main"><img src="images/pic02.jpg" alt="Код JavaScript" /></span>
+            </div>
+        </section>
+
+        <!-- Section 2: Возможности -->
+        <section>
+            <header>
+                <h2>Ключевые возможности</h2>
+            </header>
+            <div class="content">
+                <p><strong>JavaScript</strong> — мультипарадигменный язык. Он поддерживает функциональный, объектно-ориентированный и событийный стили программирования.</p>
+                <ul class="feature-icons">
+                    <li class="icon solid fa-bolt">Асинхронность: Promise, async/await</li>
+                    <li class="icon solid fa-code">Функции первого класса и замыкания</li>
+                    <li class="icon solid fa-laptop">Работа в браузере и на сервере</li>
+                    <li class="icon solid fa-cog">Огромная экосистема npm</li>
+                    <li class="icon solid fa-signal">Событийно-ориентированная модель</li>
+                    <li class="icon solid fa-map-marker-alt">Кроссплатформенность</li>
+                </ul>
+                <p>От динамической типизации до прототипного наследования — JS даёт гибкость, которая одновременно является его силой и слабостью.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Галерея примеров -->
+        <section>
+            <header>
+                <h2>Примеры кода</h2>
+            </header>
+            <div class="content">
+                <p><strong>От простого к сложному.</strong> Ниже — три классических примера, которые показывают эволюцию синтаксиса JavaScript.</p>
+
+                <!-- Пример 1 -->
+                <section>
+                    <header>
+                        <h3>Асинхронность</h3>
+                        <p>Современный способ работы с асинхронным кодом через <code>async/await</code>. Читается как синхронный, работает как асинхронный.</p>
+                    </header>
+                    <div class="content">
+                        <pre><code>async function fetchUser(id) {
+  try {
+    const res = await fetch(`/api/users/${id}`);
+    if (!res.ok) throw new Error('Ошибка сети');
+    const user = await res.json();
+    return user;
+  } catch (err) {
+    console.error('Не удалось загрузить:', err);
+  }
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Пример 2 -->
+                <section>
+                    <header>
+                        <h3>Массивы и методы</h3>
+                        <p>Цепочки методов <code>map</code>, <code>filter</code>, <code>reduce</code> — сердце функционального стиля в JS.</p>
+                    </header>
+                    <div class="content">
+                        <pre><code>const users = [
+  { name: 'Аня', age: 25, active: true },
+  { name: 'Борис', age: 17, active: false },
+  { name: 'Вика', age: 30, active: true }
+];
+
+const adultNames = users
+  .filter(u => u.active && u.age >= 18)
+  .map(u => u.name.toUpperCase())
+  .join(', ');
+
+console.log(adultNames); // "АНЯ, ВИКА"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Пример 3 -->
+                <section>
+                    <header>
+                        <h3>Замыкания</h3>
+                        <p>Функция «запоминает» своё лексическое окружение — основа для модулей, счётчиков и приватных переменных.</p>
+                    </header>
+                    <div class="content">
+                        <pre><code>function createCounter() {
+  let count = 0;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    value: () => count
+  };
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+console.log(counter.value()); // 2</code></pre>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- Section 4: Экосистема -->
+        <section>
+            <header>
+                <h2>Экосистема JavaScript</h2>
+            </header>
+            <div class="content">
+                <p><strong>JS невозможно представить без его окружения.</strong> Фреймворки, библиотеки и инструменты делают его универсальным языком для любых задач.</p>
+
+                <h3>Популярные технологии</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Технология</th>
+                                <th>Назначение</th>
+                                <th>Год</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>React</td>
+                                <td>Библиотека для UI</td>
+                                <td>2013</td>
+                            </tr>
+                            <tr>
+                                <td>Vue.js</td>
+                                <td>Прогрессивный фреймворк</td>
+                                <td>2014</td>
+                            </tr>
+                            <tr>
+                                <td>Angular</td>
+                                <td>Платформа для SPA</td>
+                                <td>2016</td>
+                            </tr>
+                            <tr>
+                                <td>Node.js</td>
+                                <td>Серверная среда</td>
+                                <td>2009</td>
+                            </tr>
+                            <tr>
+                                <td>TypeScript</td>
+                                <td>Типизированный JS</td>
+                                <td>2012</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Типы данных</h3>
+                <ul>
+                    <li><strong>Примитивы:</strong> string, number, boolean, null, undefined, symbol, bigint</li>
+                    <li><strong>Объекты:</strong> Object, Array, Function, Date, RegExp, Map, Set</li>
+                </ul>
+
+                <h3>Полезные ссылки</h3>
+                <ul class="actions">
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" class="button primary" target="_blank">MDN Документация</a></li>
+                    <li><a href="https://learn.javascript.ru" class="button" target="_blank">Learn JavaScript</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: Контакты -->
+        <section>
+            <header>
+                <h2>Оставить отзыв</h2>
+            </header>
+            <div class="content">
+                <p><strong>Изучаете JavaScript?</strong> Напишите, какие темы вам интересны — асинхронность, ООП, функциональное программирование или фреймворки.</p>
+
+                <form id="contact-form">
+                    <div class="fields">
+                        <div class="field half">
+                            <input type="text" name="name" id="name" placeholder="Имя" required />
+                        </div>
+                        <div class="field half">
+                            <input type="email" name="email" id="email" placeholder="Email" required />
+                        </div>
+                        <div class="field">
+                            <textarea name="message" id="message" placeholder="Ваш вопрос о JavaScript..." rows="7" required></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Отправить" class="button primary" /></li>
+                    </ul>
+                </form>
+
+                <div id="form-status" style="display:none; margin-top:20px; padding:15px; border-left:4px solid #4caf50;"></div>
+            </div>
+            <footer>
+                <ul class="items">
+                    <li>
+                        <h3>Email</h3>
+                        <a href="#">js@example.com</a>
+                    </li>
+                    <li>
+                        <h3>Сообщество</h3>
+                        <span>JavaScript.ru, Stack Overflow, GitHub</span>
+                    </li>
+                    <li>
+                        <h3>Где учиться</h3>
+                        <ul class="icons">
+                            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                            <li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
+                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+
+        <!-- Кнопка наверх -->
+        <a href="#" id="back-to-top" title="Наверх" style="display:none; position:fixed; bottom:30px; right:30px; width:50px; height:50px; background:#333; color:#fff; border-radius:50%; text-align:center; line-height:50px; font-size:20px; text-decoration:none; z-index:999;">↑</a>
+
+        <!-- Copyright -->
+        <div class="copyright">&copy; JavaScript Theme. Дизайн: <a href="https://html5up.net">HTML5 UP</a>.</div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- JS-логика темы -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        /* ---------- Форма ---------- */
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    showStatus('❌ Заполните все поля!', '#ffebee', '#c62828');
+                    return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showStatus('❌ Некорректный email!', '#ffebee', '#c62828');
+                    return;
+                }
+
+                console.log('📨 Данные:', { name, email, message });
+                showStatus(`✅ Спасибо, ${name}! Ваш вопрос о JavaScript принят.`, '#e8f5e9', '#2e7d32');
+                form.reset();
+            });
+        }
+
+        function showStatus(text, bg, color) {
+            if (!status) return;
+            status.textContent = text;
+            status.style.background = bg;
+            status.style.color = color;
+            status.style.display = 'block';
+            setTimeout(() => status.style.display = 'none', 5000);
+        }
+
+        /* ---------- Кнопка наверх ---------- */
+        const btn = document.getElementById('back-to-top');
+        if (btn) {
+            window.addEventListener('scroll', () => {
+                btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        /* ---------- Плавная прокрутка ---------- */
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '#back-to-top') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        /* ---------- Анимация секций ---------- */
+        const sections = document.querySelectorAll('#wrapper > section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(sec => {
+            sec.style.opacity = '0';
+            sec.style.transform = 'translateY(40px)';
+            sec.style.transition = 'opacity .8s ease, transform .8s ease';
+            observer.observe(sec);
+        });
+
+        /* ---------- Живой пример JS: счётчик в консоли ---------- */
+        const demo = { count: 0 };
+        window.jsDemo = {
+            inc: () => ++demo.count,
+            reset: () => demo.count = 0,
+            get: () => demo.count
+        };
+        console.log('🎓 Тема JavaScript загружена. Попробуйте в консоли:');
+        console.log('   jsDemo.inc()   — увеличить счётчик');
+        console.log('   jsDemo.reset() — сбросить');
+        console.log('   jsDemo.get()   — получить значение');
+
+    });
+    </script>
+
+</body>
+</html>
